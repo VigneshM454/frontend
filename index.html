@@ -3,107 +3,225 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | QR code component</title>
-
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">  
+  <title>Frontend Mentor | Newsletter sign-up form with success message</title>
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    
-      @import url('https://fonts.google.com/specimen/Outfit');  
-
-      body{
-      font-family: Outfit;
-      font-size: 15px;
-      font-weight: 700;
+    *{
+      padding: 0;
+      margin: 0 auto;
     }
-    .imgdiv{
-      background-color:#dac8a86e;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      width: 100%;
+    body{
+  
+    display: flex;
+    flex-direction: row;
+    padding: 2%;
+    margin: 1%;
+    color:hsl(235, 18%, 26%);
+    }
+   
+    .img{
+      height: 90vh;
+      margin-top: 0;
+      padding-top: 0;
+      width: 50%;
+      background-image: url('illustration-sign-up-desktop.svg');
       background-size: cover;
-      padding:0;
-      margin: 10px;
+      border-radius: 10%;
     }
-    img{
-      width: 100%;
-      height: 100%;
+    .cont{
+      padding: 1%;
+      width: 40%;
+      display: flex;
+      flex-direction: column;
+      justify-content:space-around;
+      align-items: flex-end;
+    }
+    li{
+    list-style:none ;
+    list-style-image: url("icon-list.svg");
+    list-style-position: inside;
+    line-height: 20px;
+    padding-left: 0;
+    }
+ 
+    label{
+      color: hsl(235, 18%, 26%);
+      text-align: left;
+      margin-left: 0;
+      margin-bottom: -10%;
+    }
+    input{
+      width: 90%;
+      height: 6%;
+      padding: 3% 5%;
+      border-radius: 5%;
+      background-color: hsl(0, 0%, 100%);
+      color: hsl(235, 18%, 26%);
+    }
+
+    input:valid{
+      background-color: hsl(0, 0%, 100%);
+      color: hsl(235, 18%, 26%);
+    }
+    .box{
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 0;
+    margin-bottom: 0%;
+    width: 100%;
+    font-size: 13px;
     }
     
-    #btn{
-      height: 50px;
-      width: 100%;
-      display: flex;
-      flex-direction: row;
-      margin: 0;
-      align-items: center;
+    .error{
+      display: block;
+      color: tomato;
+      right: 0;
+      position: absolute;
     }
+    .noerror{
+      display: none;
+    }
+    
     button{
-      width: 20%;
-      height: 40px;
-      font-size: 20px;
-      background-color: hsl(220, 15%, 55%);
-      color: hsl(212, 45%, 89%);
-      border-radius: 25%;
-      margin: 5%;
+      border-radius: 5%;
+      height: 10%;
+      width: 100%;
+      color: hsl(0, 0%, 100%);
+      background-color:hsl(234, 29%, 20%) ;
     }
-    button:focus{
-      color:  hsl(0, 0%, 100%);
-      background-color:  hsl(218, 44%, 22%);
-      border: 5px dotted blue ;
+    @media screen and (max-width:375px) {
+      /*mmobile*/
+      body{
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items:center;
+        justify-content: left;
+      }
+      .img{
+        width: 100%;
+        height: 240px;
+        background-image: url('illustration-sign-up-mobile.svg');
+        order: 1;
+        background-size: cover;
+        border-radius: 10%;
+        border-top-right-radius: 0;
+        border-top-left-radius: 0;
+      }
+      .cont{
+        padding: 1%;
+        width: 90%;
+        display: flex;
+        order: 2;
+      }
+     
+      input{
+        height: 7%;
+      }
+      h1,p{
+        padding-top: 15%;
+      }
+      li{
+        padding-top: 10%;
+      }
+      .box{
+        margin-top: 10%;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+      }
+      button{
+        margin-top: 8%;
+        padding: 5%;
+        margin-bottom: 10%;
+      }
     }
-    img:active{
-      border: 5px dotted blue;
-    }
+  
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
   </style>
 </head>
 <body>
-  <!---
-  <img src="desktop-design.jpg" alt="">
-  <img src="desktop-preview.jpg" alt="">
-  <img src="mobile-design.jpg" alt="">
-  -->
-  <div class="imgdiv">
-   <img src="desktop-design.jpg" class="img" alt="" onclick="border()">
-  </div>
-    <!---
-    <img src="desktop-preview.jpg" id="img" alt="">
-  
-    -->
-  <div id="btn">
-    <button onclick="des()">Desktop Design</button>
-    <button onclick="mob()">Mobile design</button>
-  </div>
-  <!--
-  Improve your front-end skills by building projects
 
-  Scan the QR code to visit Frontend Mentor and take your coding skills to the next level
+  <!-- Sign-up form start
+  img for mob
+  <img src="illustration-sign-up-mobile.svg"
+
   
+  -->
+<form name="myform" method="post" onsubmit="event.preventDefault(); "  class="cont"  required>
+  <h1>Stay updated!</h1>  
+  <p> Join 60,000+ product managers receiving monthly updates on:</p>
+  <ul>
+    <li>Product discovery and building what matters</li>
+    <li>Measuring to ensure updates are a success</li>
+    <li>And much more!</li>
+  </ul>
+  
+    <div class="box">
+      <label for="email">Email address</label>
+      <label class="noerror" id="error">Valid email required</label>
+    </div>
+  
+  <input type="email" name="ip"  id="email"  placeholder=" email@company.com" required> 
+  <button type="submit" id="btn">Subscribe to monthly newsletter </button>
+</form>
+  <div class="img">
+  </div>
+  <!-- Sign-up form end 
+   Success message start 
+   Success message end 
+      <img src="illustration-sign-up-desktop.svg" alt="" id="i1">
+
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div>
-  --->
-  <script>
-    const img=document.getElementsByClassName('img')[0];
-    function des(){
-      img.src='desktop-design.jpg';
-      img.style='width: 1440px; ';
+-->
+
+<script>
+  const input=document.getElementById('email');
+  const error=document.getElementById('error');
+  const btn=document.getElementById('btn');
+  var x;
+ /* function openpage(){
+    window.location.href="index2.html";
+  }
+*/
+  input.addEventListener('input',function(){
+    if(!input.validity.valid){
+      error.classList.remove('noerror')
+      error.classList.add('error');
+      x=-1;
     }
-    function mob(){
-      img.src="mobile-design.jpg";
-      img.style='width:375px';
-      
+    else{
+      error.classList.remove('error');
+      error.classList.add('noerror');
+      x= 0;
+    } 
     }
-    function border(){
-      bodr.style.border='5px dotted blue';
+  )
+  
+  btn.addEventListener('click',function(){
+    var i=document.forms['myform']['ip'].value;
+
+    if(x===-1 && i!==""){
+      alert('invalid');
     }
-  </script>
+    
+    else if(i===""){
+      alert('please enter the details');
+    }
+    else{
+      window.open('index2.html',"_blank")
+   //   openpage();
+    }
+       
+  })
+</script>
 </body>
 </html>

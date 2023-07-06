@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            padding: 10%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: hsl(235, 18%, 26%);
+            box-sizing: border-box;
+        }
+        #success{
+            width: 40%;
+            height: 40%;
+            background-color: hsl(0, 0%, 100%);
+            padding: 4%;
+            border-radius: 7%;
+          /*  Dark Slate Grey: hsl(234, 29%, 20%)
+            - Charcoal Grey: hsl(235, 18%, 26%)
+            - Grey: hsl(231, 7%, 60%)
+        */
+        }/*
+        #success .im{
+            background-image: url("C:\Users\Vignesh\Downloads\newsletter-sign-up-with-success-message-main\newsletter-sign-up-with-success-message-main\icon-success.svg");
+        }*/
+        button{
+            background-color:  hsl(234, 29%, 20%);
+            color: hsl(0, 0%, 100%);
+            width: 100%;
+            height: 8vh;
+            border-radius: 10%;
+        }
+        @media screen and (max-width:375px) {
+        #success{
+            width: 100%;
+        }
+        button{
+            height: 5vh;
+            margin-bottom: 2vh;
+        }
+
+        }
+    </style>
+</head>
+<body>
+    <!--
+        
+
+  A confirmation email has been sent to ash@loremcompany.com. 
+  Please open it and click the button inside to confirm your subscription.
+
+  Dismiss message
+    -->
+
+    <div id="success">
+        <img src="icon-success.svg" alt="">
+        <div class="im"></div>
+        <h1>Thanks for subscribing!</h1>
+        <p>A confirmation email has been sent to <b>ash@loremcompany.com.</b> 
+            Please open it and click  button inside to confirm your subscription.
+          </p>
+        <button onclick="window.close()">Dismiss message</button>
+    </div>
+</body>
+</html>
