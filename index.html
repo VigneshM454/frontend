@@ -1,227 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">  
-  <title>Frontend Mentor | Newsletter sign-up form with success message</title>
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    *{
-      padding: 0;
-      margin: 0 auto;
-    }
-    body{
-  
-    display: flex;
-    flex-direction: row;
-    padding: 2%;
-    margin: 1%;
-    color:hsl(235, 18%, 26%);
-    }
-   
-    .img{
-      height: 90vh;
-      margin-top: 0;
-      padding-top: 0;
-      width: 50%;
-      background-image: url('illustration-sign-up-desktop.svg');
-      background-size: cover;
-      border-radius: 10%;
-    }
-    .cont{
-      padding: 1%;
-      width: 40%;
-      display: flex;
-      flex-direction: column;
-      justify-content:space-around;
-      align-items: flex-end;
-    }
-    li{
-    list-style:none ;
-    list-style-image: url("icon-list.svg");
-    list-style-position: inside;
-    line-height: 20px;
-    padding-left: 0;
-    }
- 
-    label{
-      color: hsl(235, 18%, 26%);
-      text-align: left;
-      margin-left: 0;
-      margin-bottom: -10%;
-    }
-    input{
-      width: 90%;
-      height: 6%;
-      padding: 3% 5%;
-      border-radius: 5%;
-      background-color: hsl(0, 0%, 100%);
-      color: hsl(235, 18%, 26%);
-    }
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Frontend Mentor | Age calculator app</title>
+    <link rel="stylesheet" href="date.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
-    input:valid{
-      background-color: hsl(0, 0%, 100%);
-      color: hsl(235, 18%, 26%);
-    }
-    .box{
-    display: flex;
-    position: relative;
-    align-items: center;
-    justify-content: space-between;
-    padding-bottom: 0;
-    margin-bottom: 0%;
-    width: 100%;
-    font-size: 13px;
-    }
-    
-    .error{
-      display: block;
-      color: tomato;
-      right: 0;
-      position: absolute;
-    }
-    .noerror{
-      display: none;
-    }
-    
-    button{
-      border-radius: 5%;
-      height: 10%;
-      width: 100%;
-      color: hsl(0, 0%, 100%);
-      background-color:hsl(234, 29%, 20%) ;
-    }
-    @media screen and (max-width:375px) {
-      /*mmobile*/
-      body{
-        width: 100%;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-        align-items:center;
-        justify-content: left;
-      }
-      .img{
-        width: 100%;
-        height: 240px;
-        background-image: url('illustration-sign-up-mobile.svg');
-        order: 1;
-        background-size: cover;
-        border-radius: 10%;
-        border-top-right-radius: 0;
-        border-top-left-radius: 0;
-      }
-      .cont{
-        padding: 1%;
-        width: 90%;
-        display: flex;
-        order: 2;
-      }
-     
-      input{
-        height: 7%;
-      }
-      h1,p{
-        padding-top: 15%;
-      }
-      li{
-        padding-top: 10%;
-      }
-      .box{
-        margin-top: 10%;
-        padding-bottom: 10px;
-        margin-bottom: 10px;
-      }
-      button{
-        margin-top: 8%;
-        padding: 5%;
-        margin-bottom: 10%;
-      }
-    }
-  
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
-
-  <!-- Sign-up form start
-  img for mob
-  <img src="illustration-sign-up-mobile.svg"
-
-  
-  -->
-<form name="myform" method="post" onsubmit="event.preventDefault(); "  class="cont"  required>
-  <h1>Stay updated!</h1>  
-  <p> Join 60,000+ product managers receiving monthly updates on:</p>
-  <ul>
-    <li>Product discovery and building what matters</li>
-    <li>Measuring to ensure updates are a success</li>
-    <li>And much more!</li>
-  </ul>
-  
     <div class="box">
-      <label for="email">Email address</label>
-      <label class="noerror" id="error">Valid email required</label>
-    </div>
-  
-  <input type="email" name="ip"  id="email"  placeholder=" email@company.com" required> 
-  <button type="submit" id="btn">Subscribe to monthly newsletter </button>
-</form>
-  <div class="img">
-  </div>
-  <!-- Sign-up form end 
-   Success message start 
-   Success message end 
-      <img src="illustration-sign-up-desktop.svg" alt="" id="i1">
+        <div class="ipbox">
+            <div class="gp1">
+                <label class="label" for="date">date</label>
+                <input type="number" placeholder="DD" class="ip" name="date" id="date" max="31" min="1">
+                <p class="derror noerror">Must be a valid date</p>
+            </div>
+            <div class="gp2">
+                <label class="label" for="month">month</label>
+                <input type="number" placeholder="MM" class="ip" name="month" id="month" max="12" min="1">
+                <p class="merror noerror">Must be a valid month</p>
+            </div>
+            <div class="gp3">
+                <label class="label" for="year">year</label>
+                <input type="number" placeholder="YYYY" class="ip" name="year" id="year" max="2023" min="1">
+                <p class="yerror noerror">Must be a valid year</p>
+            </div>
+        </div>
 
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
--->
+        <div class="line">
+                <hr>
+            
+                <i class="fa fa-arrow-circle-down" style="font-size: 48px;" id="btn"></i>
+          <!--
+            <i class="fas" data-icon="<svg>...</svg>"></i>
 
-<script>
-  const input=document.getElementById('email');
-  const error=document.getElementById('error');
-  const btn=document.getElementById('btn');
-  var x;
- /* function openpage(){
-    window.location.href="index2.html";
-  }
-*/
-  input.addEventListener('input',function(){
-    if(!input.validity.valid){
-      error.classList.remove('noerror')
-      error.classList.add('error');
-      x=-1;
-    }
-    else{
-      error.classList.remove('error');
-      error.classList.add('noerror');
-      x= 0;
-    } 
-    }
-  )
-  
-  btn.addEventListener('click',function(){
-    var i=document.forms['myform']['ip'].value;
-
-    if(x===-1 && i!==""){
-      alert('invalid');
-    }
-    
-    else if(i===""){
-      alert('please enter the details');
-    }
-    else{
-      window.open('index2.html',"_blank")
-   //   openpage();
-    }
-       
-  })
-</script>
+          -->
+        </div>
+        <br>
+        <div class="op">
+            <h1 class="age"> <span id="oy">--</span> years</h1>
+            <h1 class="age"> <span id="om">--</span> months</h1>
+            <h1 class="age"> <span id="od">--</span> days</h1>
+        </div>
+        </div>
+    <script src="date.js"></script>
+ 
 </body>
 </html>
