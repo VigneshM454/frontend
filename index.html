@@ -1,51 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Frontend Mentor | Age calculator app</title>
-    <link rel="stylesheet" href="date.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  
+  <title>Frontend Mentor | Notifications page</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+  <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <div class="box">
-        <div class="ipbox">
-            <div class="gp1">
-                <label class="label" for="date">date</label>
-                <input type="number" placeholder="DD" class="ip" name="date" id="date" max="31" min="1">
-                <p class="derror noerror">Must be a valid date</p>
-            </div>
-            <div class="gp2">
-                <label class="label" for="month">month</label>
-                <input type="number" placeholder="MM" class="ip" name="month" id="month" max="12" min="1">
-                <p class="merror noerror">Must be a valid month</p>
-            </div>
-            <div class="gp3">
-                <label class="label" for="year">year</label>
-                <input type="number" placeholder="YYYY" class="ip" name="year" id="year" max="2023" min="1">
-                <p class="yerror noerror">Must be a valid year</p>
-            </div>
-        </div>
 
-        <div class="line">
-                <hr>
-            
-                <i class="fa fa-arrow-circle-down" style="font-size: 48px;" id="btn"></i>
-          <!--
-            <i class="fas" data-icon="<svg>...</svg>"></i>
+  <div class="container">
+    <div class="head">
+      <h2>Notifications <span class="nh">3</span> </h2>
+      <p id="btn">Mark all as read</p>
+    </div>
+    <div class="box unread" id="box">
+      <img src="avatar-mark-webber.webp">
+      <div class="boxp">
+        <p><b>Mark Webber</b>  reacted to your recent post My first tournament today! <span class="dot">.</span>
+       <br> <span class='span'> 1m ago</span> </p>
+      </div>
+     
+    </div>
+    <div class="box unread" id="box">
+      <img src="avatar-angela-gray.webp">
+      <p><b>Angela Gray</b> followed you <span class="dot">.</span>
+       <br> <span class='span'>5m ago</span></p> 
+    </div>
+    <!---
+    <div class="myrep">
+      <p id="mycont"></p>
+      <img src="./assets/circle-user-solid.svg"  width="50px" height="50px" alt="">
+    </div>
+    --->
+    <div class="box unread" id="box">
+      <img src="avatar-jacob-thompson.webp">
+      <p><b> Jacob Thompson</b> has joined your group <span style="color:hsl(219, 85%, 26%);">Chess Club</span> <span class="dot">.</span>
+       <br> <span class='span'> 1 day ago</span></p>
+       </div>
+    <div class="box" id="box">
+      <img src="avatar-rizky-hasanuddin.webp" alt="">
+      <div>
+        <p><b>Rizky Hasanuddin</b>  sent you a private message
+          <span class='span'> 5 days ago</span></p> 
+        <div class="boxbox " id="box">Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and 
+          I'm already having lots of fun and improving my game.</div>
+      </div>
+    </div>
+    <div class="box" id="box">
+      <img src="avatar-kimberly-smith.webp">
+      <p><b>Kimberly Smith</b>  commented on your picture
+        <span class='span'>1 week ago</span> </p>
+        <img id="rightimage" src="image-chess.webp" alt="">
+      </div>
+    <div class="box" id="box">
+      <img src="avatar-nathan-peterson.webp">
+      <p><b> Nathan Peterson</b> reacted to your recent post 5 end-game strategies to increase your win rate
+        <span class='span'>2 weeks ago</span> </p>
+    </div>
+    <div class="box" id="box">
+      <img src="avatar-anna-kim.webp">
+      <p><b> Anna Kim</b> left the group <span style="color:hsl(219, 85%, 26%);">Chess Club</span> 
+      <span class='span'> 2 weeks ago</span>  </p> 
+    </div>
+    <div class="mybox" id="mybox">
+      <input type="text" placeholder="REPLY" id="ip" value="">
+      <img src="paper-plane-solid.svg" id="send" alt="">
 
-          -->
-        </div>
-        <br>
-        <div class="op">
-            <h1 class="age"> <span id="oy">--</span> years</h1>
-            <h1 class="age"> <span id="om">--</span> months</h1>
-            <h1 class="age"> <span id="od">--</span> days</h1>
-        </div>
-        </div>
-    <script src="date.js"></script>
- 
+    </div>
+  </div>
+  <div class="option">
+    <img src="icon-close.svg" id="close" alt="">
+    <h3 id="read">Mark the message as read</h3>
+    <h3 id="delete" >Delete the message</h3>
+    <h3 id="reply" >Reply</h3>
+  </div>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+  <script src="index.js"></script>
 </body>
 </html>

@@ -1,11 +1,6 @@
-# frontend
-## QRcode component
-
-## building my first project
-
-1. create necessary html tags
-2. include necessary images required
-3. write the css inside the html using internal css
-4. create necessary classes, id and psuedo classes
-5.  apply styles to html
-6. included script for handling some functions
+## notification page
+# user can mark all unread message as read
+# user can separately mark as read
+# also user can delete an existing message
+# can send reply too
+# only front end 

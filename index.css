@@ -1,0 +1,156 @@
+@import url(https://fonts.google.com/specimen/Plus+Jakarta+Sans);
+*{
+    font-size: 16px;
+    color: hsl(219, 12%, 42%);
+    font-weight: 500;
+    font-family: 'Plus Jakarta Sans';
+}
+body{
+    align-items: center;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+    margin: 5%;
+    background-color: white;
+    /* border: 1px solid black; */
+    border-radius: 5%;
+    box-shadow: 0 0 14px #bfbaba, 0 0 0px #989a98, 0 0 0 0px #d8d5d5;
+}
+.unread{
+    background-color: aliceblue;
+
+}
+.box{
+    padding: 3%;
+    margin: 1%;
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+
+  /*  justify-content: space-between;
+*/}
+.head{
+    margin: 3%;
+    padding: 3%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.boxbox{
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+    margin: 5%;
+    border: 1px solid gainsboro;
+    cursor: pointer;
+}
+img{
+    width: 60px;
+    height: 60px;
+}
+p{
+    padding-left: 5%;
+}
+#rightimage{
+    margin-left: 2%;
+}
+span.span{
+    display: block;
+    color:hsl(219, 14%, 63%);
+}
+h2{
+    display: flex;
+}
+span.nh{
+    background-color: hsl(219, 85%, 26%);
+    padding-left: 5%;
+    padding-right: 5%;
+    color: white;
+    margin-left: 2%;
+    height: 20px;
+    font-size: 85%;
+
+}
+.dot{
+    color: red;    
+    display: contents;
+    line-height: 1px;
+    font-size: 50px;
+    padding-top: 0;
+}
+.boxbox:hover{
+    background-color: rgb(148, 148, 241);
+}
+#btn{
+    cursor: pointer;
+    color:hsl(224, 21%, 14%);
+}
+.option{
+    display: none;
+    background-color:wheat;
+    border: 2px solid black;
+    position: absolute;
+    width: 40%;
+    z-index: 2;
+    padding-left: 5%;
+    top: 40%;
+    left: 40%;
+}
+h3{
+    color: black;
+}
+#close{
+    display: flex;
+    width: 30px;
+    height: 30px;
+    margin-left: 85%;
+    padding-top: 5%;
+}
+#edit{
+    display: none;
+}
+#send{
+    width: 20px;
+    height: 20px;
+    background-color: aliceblue;
+}
+.reply{
+    margin-right: 3%;
+    width: 85%;
+    height: 30px;
+}
+#mybox{
+    display: none;
+}
+.myrep{
+    display: flex;
+    padding: 3%;
+    margin: 1%;
+   /* display: flex;
+    */flex-direction: row;
+    cursor: pointer;
+    justify-content: space-between;
+}
+b,h2{
+    color: hsl(224, 21%, 14%);
+    font-weight: 800;
+}
+@media (width<=290px) {
+    .container{
+        margin: 0;
+        padding:1%;
+    }
+}
+@media (width>=600px){
+    .container{
+        width: 500px;
+        margin-top: 1%;
+        padding-top: 2%;
+    }
+    body{
+        display: grid;
+        justify-content: center;
+    }
+}
