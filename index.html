@@ -6,7 +6,7 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   
-  <title>Frontend Mentor | Notifications page</title>
+  <title>Frontend Mentor | Interactive card details form</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
@@ -16,77 +16,90 @@
   <link rel="stylesheet" href="index.css">
 </head>
 <body>
+<!---
+  0000 0000 0000 0000
+  Jane Appleseed
+  00/00
 
-  <div class="container">
-    <div class="head">
-      <h2>Notifications <span class="nh">3</span> </h2>
-      <p id="btn">Mark all as read</p>
-    </div>
-    <div class="box unread" id="box">
-      <img src="avatar-mark-webber.webp">
-      <div class="boxp">
-        <p><b>Mark Webber</b>  reacted to your recent post My first tournament today! <span class="dot">.</span>
-       <br> <span class='span'> 1m ago</span> </p>
-      </div>
-     
-    </div>
-    <div class="box unread" id="box">
-      <img src="avatar-angela-gray.webp">
-      <p><b>Angela Gray</b> followed you <span class="dot">.</span>
-       <br> <span class='span'>5m ago</span></p> 
-    </div>
-    <!---
-    <div class="myrep">
-      <p id="mycont"></p>
-      <img src="./assets/circle-user-solid.svg"  width="50px" height="50px" alt="">
-    </div>
-    --->
-    <div class="box unread" id="box">
-      <img src="avatar-jacob-thompson.webp">
-      <p><b> Jacob Thompson</b> has joined your group <span style="color:hsl(219, 85%, 26%);">Chess Club</span> <span class="dot">.</span>
-       <br> <span class='span'> 1 day ago</span></p>
-       </div>
-    <div class="box" id="box">
-      <img src="avatar-rizky-hasanuddin.webp" alt="">
-      <div>
-        <p><b>Rizky Hasanuddin</b>  sent you a private message
-          <span class='span'> 5 days ago</span></p> 
-        <div class="boxbox " id="box">Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and 
-          I'm already having lots of fun and improving my game.</div>
-      </div>
-    </div>
-    <div class="box" id="box">
-      <img src="avatar-kimberly-smith.webp">
-      <p><b>Kimberly Smith</b>  commented on your picture
-        <span class='span'>1 week ago</span> </p>
-        <img id="rightimage" src="image-chess.webp" alt="">
-      </div>
-    <div class="box" id="box">
-      <img src="avatar-nathan-peterson.webp">
-      <p><b> Nathan Peterson</b> reacted to your recent post 5 end-game strategies to increase your win rate
-        <span class='span'>2 weeks ago</span> </p>
-    </div>
-    <div class="box" id="box">
-      <img src="avatar-anna-kim.webp">
-      <p><b> Anna Kim</b> left the group <span style="color:hsl(219, 85%, 26%);">Chess Club</span> 
-      <span class='span'> 2 weeks ago</span>  </p> 
-    </div>
-    <div class="mybox" id="mybox">
-      <input type="text" placeholder="REPLY" id="ip" value="">
-      <img src="paper-plane-solid.svg" id="send" alt="">
+  000
 
+  Cardholder Name
+  e.g. Jane Appleseed
+
+  Card Number
+  e.g. 1234 5678 9123 0000
+
+  Exp. Date (MM/YY)
+  MM
+  YY
+
+  CVC
+  e.g. 123
+
+  Confirm
+  --->
+  <div class="card-front">
+    <img src="card-logo.svg" alt="front side card image">
+    <h2 id="cardnum">  0000 0000 0000 0000
+    </h2>
+    <p>
+      <span id="cardname" style="width:70%">  Jane Appleseed </span>
+      <span id="cardexpdate1">00</span>/<span id="cardexpdate2">00</span>
+
+     </p>
+  </div>
+  <div class="card-back" >
+    <p id="cardcvc">000</p>
+  </div>
+  
+  <div class="des-design">
+<!----    <img src="bg-main-desktop.png" alt="" width="100%" height="100%">    -->
+  </div>
+  <div id="form">
+    <div id="success">
+      <img src="icon-complete.svg" alt="success icon">
+      <h1>Thank you!</h1>
+      <div id="pbs">
+        <p>We've added your card details</p>
+      <button>  Continue</button>
+      </div>
+      
     </div>
+    <form action="" >
+      <label for="name"> Cardholder Name</label>
+      <input  class="inputs" type="text" placeholder=" e.g. Jane Appleseed" id="name">
+      <div class="namerr err">cant be blank</div>
+      <label for="cardno">  Card Number</label>
+      <input  class="inputs" type="number" name="" placeholder="  e.g. 1234 5678 9123 0000" id="num">
+      <div class="numerr err">cant be blank</div>
+      <div class="cdelab">
+      <label for="expdate">  Exp. Date (MM/YY)</label>
+      <label for="cvc" id="cvlabel">  CVC </label>
+    </div>
+      <div class="cdeip">      
+        <div class="date">
+          <div class="ipdate">
+          <input  class="inputs" type="number" style="width:40%" name="" min="1" max="12" placeholder="MM" id="expmonth">
+          <input  class="inputs" type="number" style="width:40%" name="" min="25" max="45" placeholder="YY" id="expyear">
+          </div>
+          <div class="dateerr1 err">cant be blank</div>
+        </div>
+      <div class="cv">
+        <input  class="inputs" type="number" style="width:70%" placeholder=" e.g. 123" id="cvc" minlength="3" maxlength="4">
+        <div class="cverr err">cant be blank</div>
+      </div>  
+    </div>
+      <button type="submit" id="verify">Confirm</button>
+    </form>
   </div>
-  <div class="option">
-    <img src="icon-close.svg" id="close" alt="">
-    <h3 id="read">Mark the message as read</h3>
-    <h3 id="delete" >Delete the message</h3>
-    <h3 id="reply" >Reply</h3>
-  </div>
+
+  <!-- Completed state start 
+  
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div>
+-->
   <script src="index.js"></script>
 </body>
 </html>
