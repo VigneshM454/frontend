@@ -1,224 +1,137 @@
-@import url('https://fonts.google.com/specimen/Space+Grotesk');
+@import url(https://fonts.google.com/specimen/League+Spartan);
+:root{
+    --slider:hsl(6,63%,50%);
+    --sliderbox:hsl(224,36%,15%);
+}
 *{
-    font-size: 18px;
-    font-weight: 500;
-    font-family: 'Space Grotesk';
+    font-family: 'League Spartan';
 }
+.calci{
+    min-width: 300px;
+    padding-right: 10px;
+}
+#span{
+    width: 50px;
+    display: flex;
+    margin: 0;
+    gap: 15px;
+}
+input[type="range"] {
+    appearance: none;
+    width: 71px;
+    height: 23px;
+    padding-left: 5px;
+    padding-right: 5px;
+    background: var(--sliderbox);
+    border-radius: 25px;
+    outline: none;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+  }
+  
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; 
+    appearance: none;
+    width: 20px;
+    height: 20px; 
+    background: var(--slider); 
+    border-radius: 50%; 
+    cursor: pointer;
+  }
+  
 body{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 0;
-    margin: 0;
     height: 100vh;
+    background-color: hsl(222,26%,31%);
+    color: hsl(0,0%,100%);
+    margin: 10%;
 }
-
-.card-front, .card-back{
-    background-image: url('bg-card-front.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    margin: 1rem;
-    padding: 1rem;
-    z-index: 2;
-     position: absolute; 
-    width: max(14em,30vw);
-    height:10rem;
-    left: 0%;
-    top: 15%;
-}
-.card-front>img{
-    width: 15%;
-    height: 10%;
-}
-.card-front>p{
-    top: 2.5rem;
-    margin: 0;
-    width: 80%;
-    color: hsl(0, 0%, 100%);
-    position: relative;
-    display: inline-flex;
-    justify-content: space-around;
-
-}
-.card-front>h2{
-    bottom: 23rem;
-    color:hsl(0, 0%, 100%);
-    position: relative;
-    top: 0.4rem;
-}
-.card-back{
-    background-image: url('bg-card-back.png');
-    top: 50%;
-  /*  margin-top: 5%;
-   */ left: 10%;
-}
-.card-back>p{
-    color: hsl(0, 0%, 100%);
-    margin-top: 20%;
-    position: relative;
-    top: -3%;
-    padding-left: 65%;
-}
-#cvlabel{
-    position: relative;
-    margin-right: 20%;
-}
-input{
-    border: 5px solid hsl(270, 3%, 87%);
-    padding: 2%;
-}
-.ipdate>input{
-    margin-left: 6px;
-}
-input:active{
-    border: 5px solid;
-    border-image:linear-gradient(hsl(249, 99%, 64%),hsl(278, 94%, 30%));
-}
-#form{
-    left: max(12%,160px);
-    display: flex;
-    justify-content: center;
-    height: 100vh;
-    width: 100%;
-    align-items: center;
-    position: relative;
-}
-#form form{
-    margin: 5%;
-    padding: 2%;
-    display: flex;
-    width: max(40vw,300px);
-    position: relative;
-    border: 2px solid black;
-    flex-direction: column;
-}
-#form #success{
-    display: none;
-    position: relative;
-    flex-direction: column;
+.sliderbox{
+    background-color: red;
     height: 100px;
+    width: 100px;
+}
+.contain{
+    display: grid;
+    grid-template-columns:3fr 1fr 1fr;
+    grid-auto-rows: 70px;
+    gap: 1em;
+}
+.col1{
+    line-height: 480%;
+}
+.display {
     width: 100%;
-    justify-content: center;
-    align-items: center;
-}
-#success>h1{
-    color: hsl(278, 68%, 11%);
-}
-#success>p{
-    color: hsl(279, 6%, 55%);
-}
-/*
-input{
-    margin-bottom: 20px;
-    margin-top: 10px;
-}
-*/
-label{
-    margin-top: 25px;
-    margin-bottom: 5px;
-    color: hsl(278, 68%, 11%);
+    height: 66px;
+    font-size: 32px;
+    text-align: right;
+    padding: 10px;
+    padding-right: 9%;
+    background-color: hsl(224,36%,15%);
+    color: hsl(0,0%,100%);
+    border-radius: 20px;
+    overflow-y: hidden;
+    overflow-x: auto;
 }
 
-.cdelab{
+.span{
+    top: 2%;
+    right: 10%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    position: absolute;
+    margin-right: 5px;
 }
-
-.cdeip{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-bottom: 10px;
-    margin-top: 5px;
+span{
+    margin: 3px;
 }
-.ipdate{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    
+.keyboard{
+    background-color: hsl(224,36%,15%);
+    border-radius: 15px;
+    margin-top: 5%;
+    padding: 5%;
+    min-width: 250px; 
 }
-.des-design{
-    background-image: url('bg-main-desktop.png');
-    width: 40rem;
-    height: 100vh;
-    min-width: 180px;
+.num, .oper{
+    background-color: hsl(30,25%,89%);
+    box-shadow:0 3px hsl(28,16%,65%);
+    color: hsl(221,14%,31%);
 }
-.date, .cv{
-    display: flex;
-    width: 40%;
-    flex-direction: column;
-    
+#equal{
+background-color: hsl(6,63%,50%);
+box-shadow: 0 3px hsl(6,70%,34%);
+color: hsl(0,0%,100%);
 }
-.err{
-    display: none;
-    color: red;
+#backspace, #clear{
+    background-color: hsl(225,21%,49%);
+    color: hsl(0,0%,100%);
+    box-shadow: 0 3px hsl(224,28%,35%);
+}
+.num, .oper,.oper2{
+    font-size: 22px;
+    font-weight: 700;
 }
 button {
-    width: 100%;
-    color:  hsl(0, 0%, 100%);
-    background-color: hsl(278, 68%, 11%);
-    padding: 10px;
     border-radius: 15px;
-    font-weight: 400;
-    font-size: 32px;
- /*   color:  hsl(270, 3%, 87%);
-    color: hsl(279, 6%, 55%);
-    */
+    border: none;
 }
-@media (width>=400px) {
-   .des-design{
-        background-image: url('bg-main-desktop.png');
-        width: 40rem;
-        height: 100vh;
-        min-width: 180px;
-    }
-    
+.btn1{
+    display: grid;
+    grid-template-columns:repeat(4,minmax(0,1fr) );
+    grid-auto-rows: 60px;
+    gap: 1em;
 }
-@media (width<400px) {
-   .des-design{
-        background-image: url('bg-main-mobile.png');
-        width:100vw;
-        height:35vh;
-        min-width: 300px;
-    }
-    body{
-        flex-direction: column;
-    }
-    .card-back{
-        top: 0;
-    }
-    .card-front{
-        top: 14%;
-        z-index: 3;
-    }
-    #form{
-    left: 0;
-    width: 100vw;
-    position: relative;
-    justify-content: left;
-    height: 500px;
-    flex-direction: column;
-    align-items: flex-start;
-    }
-   #form form{
-    margin: 10px;
-    padding: 5px;
-    top: 20%;
-    width: 92vw;
-    }
-   #form #success{
-    margin-left: 10%;
-    padding-left: 5%;
-    top: 35%;
-    width: 250px;
+.btn2{
+    margin-top: 5%;
+    display: grid;
+    gap: 1em;
+    grid-template-columns: repeat(2,1fr);
+    grid-auto-rows: 60px;
+}
+@media(width<=550px){
+
+    .btn1, .btn2{
+        grid-auto-rows: 45px;
     }
 }
-@media (width>970px){
-    .card-front>p {
-        top: 3.7rem;
-    }
-}
+ 
