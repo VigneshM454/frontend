@@ -5,14 +5,11 @@
     font-family: 'Barlow Semi Condensed';
 }
 body{
-    background:radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%) )  ;
-}
-h1,h2,h3{
-    font-weight: 700;
+    background-color: darkblue;
 }
 .contain{
     width: 80vw;
-    height: 100vh;
+    height: 150vh;
     margin-left: 3%;
     min-width: 250px;
     display: flex;
@@ -32,8 +29,8 @@ h1,h2,h3{
 .scorebox>h1{
     color:  hsl(229, 25%, 31%);
 }
-.bgtriangle{
-    background-image: url(" bg-triangle.svg");
+.bgpentagon{
+    background-image: url(" bg-pentagon.svg");
     background-repeat: no-repeat;
     width: 30rem;
     background-size: 30rem;
@@ -56,40 +53,52 @@ h1,h2,h3{
     border-radius: 20px;
 }
 .titlebox>img{
-    width: 13rem;
+    width: 10rem;
     height: 7rem;
 }
-.rock,.paper,.scissor{
+.paper, .scissor, .rock, .lizard, .spock{
     display: flex;
     position: absolute;
-    width: 15rem;
-    height: 15rem;
+    width: 10rem;
+    height: 10rem;
     justify-content: center;
     align-items: center;
    /* background-color: red;
-   */ border-radius: 50%;
+   */ border:2rem solid blue;
+    border-radius: 50%;
     background-color: white;
-    border:2rem solid blue;
 }
-img{
-    width: 7rem;
-    height: 7rem;
+.tri>img{
+    width: 6rem;
+    height: 6rem;
 }
-.paper{
-    top: -6rem;
-    right: 18rem;
+
+.paper {
+    top: 5rem;
+    right: -4rem;
     border-color: hsl(230, 89%, 62%);
 }
-.scissor{
-    left: 16rem;
+.scissor {
+    left: 9rem;
     top: -6rem;
     border-color: hsl(39, 89%, 49%)
 }
-.rock{
-    top: 14rem;
-    left: 6rem;
-    border-color: hsl(349, 71%, 52%);
 
+.rock {
+    top: 21rem;
+    left: 17rem;
+    border-color: hsl(349, 71%, 52%);
+}
+.lizard {
+    top: 21rem;
+    left: -2rem;
+    border-color: hsl(261, 73%, 60%)  ;
+}
+
+.spock {
+    top: 4rem;
+    left: -4rem;
+    border-color:  hsl(189, 59%, 53%) ;
 }
 .btn{
     display: flex;
@@ -101,23 +110,24 @@ img{
     font-size: 25px;
     position: relative;
     color: white;
-    border: 5px solid white;
     background-color: inherit;
+    border: 5px solid white;
 }
 button{
     color: rgb(109, 109, 202);
-    /*  border: 2px solid white;
-    */  background-color: white;
+  /*  border: 2px solid white;
+  */  background-color: white;
     border-radius: 15px;
 }
 .modal{
     display: none;
     position: fixed;
-    top: 30%;
+    top: 15%;
     place-content: center;
     width: 25rem;
     background-color: rgba(0,0,0,0.9);
 }
+
 .modal-content{
     display: flex;
     width: 100%;
@@ -135,7 +145,6 @@ button{
     height: 20rem;
     color: white;
     border: 1% solid white;
-
 }
 #close{
     width: 2rem;
@@ -149,8 +158,8 @@ button{
   /*  display: flex;
     */justify-content: space-evenly;
     flex-direction: column;
- /*   border: 2px solid snow;
-  */  height: 60vh;
+/*    border: 2px solid snow;
+ */   height: 60vh;
     width: 100%;
     min-width: 300px;
     max-width: 900px;
@@ -160,6 +169,7 @@ button{
     display: flex;
     justify-content: space-around;
     color: whitesmoke;
+
 }
 .pick{
     width: 95%;
@@ -178,18 +188,23 @@ button{
     border-radius: 50%;
     background-position: center;
     background-size: 100px 100px;
-
 }
 .pick1{
 background-image: url(' icon-paper.svg');
 background-repeat: no-repeat;
-/*border: 2rem solid yellow;
-*/background-color: white;
-
+border: 2rem solid yellow;
+background-color: white;
+/*box-shadow: 
+0 0 0 10px rgba(0, 0, 191, 0.9),
+0 0 0 20px rgba(51, 51, 192, 0.7),
+0 0 0 30px rgba(0, 0, 191, 0.5);
+*/
 }
 .pick2{
-background-repeat: no-repeat;
+/*background-image: url(' icon-rock.svg');
+*/background-repeat: no-repeat;
 background-color: rgb(1, 1, 59);
+border: 2rem solid;
 }
 .result{
     display: none;
@@ -201,43 +216,64 @@ color: white;
 font-size: 40px;
 }
 #play{
+background-color: white;
 color: hsl(229, 25%, 31%);
-/*  border: 2px solid white;
- */  background-color: white;  
 padding: 5%;
 font-size: 25px;
 }
-@media (min-width: 400px) and (max-width: 650px) {
+@media (min-width: 400px) and (max-width: 750px) {
     .pick1, .pick2 {
-   /*   border: 1rem solid;
-    */  width: 10rem;
-      height: 7rem;
-      background-size: 3.5rem 3.5rem;
+      border: 1rem solid;
+      width: 8rem;
+      height: 5rem;
+      background-size: 2.5rem 2.5rem;
     }
-    .paper, .scissor, .rock{
-        width: 8rem;
-        height: 8rem;
+    .modal{
+        width:20rem ;
+        height: 400px;
+    }
+    .paper, .scissor, .rock, .spock, .lizard{
+        width: 6rem;
+        height: 6rem;
+        border:1rem solid blue;
     }
     .tri>img{
         width: 4rem;
         height: 4rem;
     }
-    .bgtriangle{
-        width: 15rem;
-        background-size: 15rem;
-        height: 15rem;
+    .bgpentagon{
+        width: 20rem;
+        background-size: 20rem;
+        height: 20rem;
     }
+        
     .scissor {
-        left: 9rem;
-        top: -5rem;
+        left: 6rem;
+        top: -3rem;
+        border-color: hsl(39, 89%, 49%)
+
     }
     .paper {
-        top: -5rem;
-        right: 9rem;
+        top: 2rem;
+        right: -3rem;
+        border-color:hsl(230, 89%, 62%);
     }
     .rock {
-        top: 8rem;
-        left: 2rem;
+        top: 14rem;
+        left: 11rem;
+        border-color: hsl(349, 71%, 52%);
+
+    }
+    .lizard {
+        top: 14rem;
+        left: 0rem;
+        border-color: hsl(261, 73%, 60%)  ;
+
+    }
+    .spock {
+        top: 3rem;
+        left: -2rem;
+        border-color:  hsl(189, 59%, 53%) ;
     }
     
 .titlebox>img{
@@ -265,10 +301,10 @@ font-size: 25px;
         right: 0;
     }
     .pick1, .pick2 {
-       /* border: 1rem solid;
-        */width: 5rem;
+        border: 1rem solid;
+        width: 5rem;
         height: 5rem;
-        top: -20%;
+        top: -35%;
         position: relative;
         background-size: 3rem 3rem;
       }
@@ -288,36 +324,49 @@ font-size: 25px;
       .btn{
         margin-left: 0;
       }
-      .paper, .scissor, .rock{
-          width: 5rem;
-          height: 5rem;
-          border:1rem solid blue;
+      .paper, .scissor, .rock, .spock, .lizard{
+          width: 4rem;
+          height: 4rem;
+          border: 1rem solid blue;
       }
       .tri>img{
-          width: 3rem;
-          height: 3rem;
+          width: 2rem;
+          height: 2rem;
       }
-      .bgtriangle{
-          width: 10rem;
-          background-size: 10rem;
-          height: 10rem;
+      .bgpentagon{
+          width: 13rem;
+          background-size: 13rem;
+          height: 13rem;
       }
+     
     .scissor {
-        left: 7rem;
-        top: -4rem;
+        left: 4rem;
+        top: -2.5rem;
         border-color: hsl(39, 89%, 49%)
 
     }
-      .paper {
-        top: -4rem;
-        right: 6.5rem;
+    .paper {
+        top: 2rem;
+        right: -2rem;
         border-color:hsl(230, 89%, 62%);
     }
-      .rock {
-          top: 5rem;
-          left: 1rem;
-          border-color: hsl(349, 71%, 52%);
-      }
+    .rock {
+        top: 9rem;
+        left: 7rem;
+        border-color: hsl(349, 71%, 52%);
+
+    }
+    .lizard {
+        top: 9rem;
+        left: 0rem;
+        border-color: hsl(261, 73%, 60%)  ;
+
+    }
+    .spock {
+        top: 2rem;
+        left: -2rem;
+        border-color:  hsl(189, 59%, 53%) ;
+    }
       .scorebox{
         padding: 1em;
         padding-top: 0;
@@ -329,4 +378,25 @@ font-size: 25px;
         padding-left: 20px;
       }
 }
+/*
+body{
+    color: hsl(39, 89%, 49%);
+    color: hwb(40 13% 7%);
+    color: hsl(230, 89%, 62%);
+    color: hsl(230, 89%, 65%);
+    color: hsl(349, 71%, 52%);
+    color: hsl(349, 70%, 56%);
+    color: hsl(261, 73%, 60%);
+    color: hsl(261, 72%, 63%);
+    color: hsl(189, 59%, 53%);
+    color: hsl(189, 58%, 57%);
 
+    color: hsl(229, 25%, 31%);
+    color: hsl(229, 64%, 46%);
+    color:hsl(217, 16%, 45%);
+    color: rgba(117, 138, 165, 0.59);
+    color:rgb(31, 55, 86) ;
+    color: hsl(237, 49%, 15%);
+    
+}
+*/

@@ -1,71 +1,90 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        body{
-            padding: 10%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background-color: hsl(235, 18%, 26%);
-            box-sizing: border-box;
-        }
-        #success{
-            width: 40%;
-            height: 40%;
-            background-color: hsl(0, 0%, 100%);
-            padding: 4%;
-            border-radius: 7%;
-          /*  Dark Slate Grey: hsl(234, 29%, 20%)
-            - Charcoal Grey: hsl(235, 18%, 26%)
-            - Grey: hsl(231, 7%, 60%)
-        */
-        }/*
-        #success .im{
-            background-image: url("C:\Users\Vignesh\Downloads\newsletter-sign-up-with-success-message-main\newsletter-sign-up-with-success-message-main\icon-success.svg");
-        }*/
-        button{
-            background-color:  hsl(234, 29%, 20%);
-            color: hsl(0, 0%, 100%);
-            width: 100%;
-            height: 8vh;
-            border-radius: 10%;
-        }
-        @media screen and (max-width:375px) {
-        #success{
-            width: 100%;
-        }
-        button{
-            height: 5vh;
-            margin-bottom: 2vh;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
-        }
-    </style>
+  <link rel="icon" type="image/png" sizes="32x32" href=" favicon-32x32.png">
+  
+  <title>Frontend Mentor | Rock, Paper, Scissors</title>
+  <link rel="stylesheet" href="index2.css">
+  <!--Score
+  Rules
+
+  You Picked
+  The House Picked
+
+  You Win
+  You Lose
+
+  Play Again
+ -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+ 
+  </style>
 </head>
 <body>
-    <!--
-        
-
-  A confirmation email has been sent to ash@loremcompany.com. 
-  Please open it and click the button inside to confirm your subscription.
-
-  Dismiss message
-    -->
-
-    <div id="success">
-        <img src="icon-success.svg" alt="">
-        <div class="im"></div>
-        <h1>Thanks for subscribing!</h1>
-        <p>A confirmation email has been sent to <b>ash@loremcompany.com.</b> 
-            Please open it and click  button inside to confirm your subscription.
-          </p>
-        <button onclick="window.close()">Dismiss message</button>
+  <div class="contain">
+    
+    <div class="titlebox">
+      <img src=" logo-bonus.svg" alt="">
+      <div class="scorebox">
+        <p>SCORE</p>
+        <h1 id="score" value="10">10</h1>
+      </div>
     </div>
+    <div class="step2">
+      <div class="hd">
+        <h2>YOU PICKED</h2>
+        <h2>THE HOUSE PICKED</h2>
+      </div>
+      <div class="pick">
+      <div class="pick1"></div>
+      <div class="result">
+        <h1 id="h1"></h1>
+        <button id="play" onclick="playagain()">PLAY AGAIN</button>
+      </div>
+      <div class="pick2"></div> 
+      </div>
+    </div>
+    <div class="bgpentagon">
+      <div class="tri paper" id="paper">
+        <img src=" icon-paper.svg"  alt="" >
+      </div>
+      <div class="tri scissor" id="scissor">
+        <img src=" icon-scissors.svg"  alt="" >
+      </div>
+      <div class="tri rock" id="rock">
+        <img src=" icon-rock.svg"  alt="" >
+      </div>
+      <div class="tri lizard" id="lizard">
+          <img src=" icon-lizard.svg" alt="">
+      </div>
+      <div class="tri spock" id="spock">
+          <img src=" icon-spock.svg" alt="">
+      </div>
+    </div>
+    <button class="btn" onclick="show()">RULES</button>
+    <div id="mymodal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <h1>RULES</h1>
+        <img src=" image-rules-bonus.svg" id="rules" alt="">
+        <img src=" icon-close.svg" id="close" alt="">
+      </div>
+    
+    </div>
+  </div>
+  
+<!---
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+  --->
+  <script src="index2.js"></script>
 </body>
 </html>

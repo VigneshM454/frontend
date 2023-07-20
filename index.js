@@ -1,121 +1,128 @@
-//number
-const one=document.getElementById('1').value;
-const two=document.getElementById('2').value;
-//const sum=Number(one.value);
-const three=document.getElementById('3').value;
-const four = document.getElementById('4').value;
-const five = document.getElementById('5').value;
-const six  = document.getElementById('6').value;
-const seven = document.getElementById('7').value;
-const eight = document.getElementById('8').value;
-const nine = document.getElementById('9').value;
-const zero = document.getElementById('0').value;
-//operations
-const add = document.getElementById('+');
-const dif = document.getElementById('-');
-const mul = document.getElementById('x');
-const div = document.getElementById('/');
+const btn=document.getElementsByClassName('btn')[0];
+const modal=document.getElementById('mymodal');
+const modalcontent=document.getElementsByClassName('modal-content')[0];
+const close=document.getElementById('close');
 
-const pt = document.getElementById('pt');
-const equal = document.getElementById('equal');
-const backspace=document.getElementById('backspace');
-const clear=document.getElementById('clear');
+const triangle=document.getElementsByClassName('bgtriangle')[0];
+const rockdiv=document.getElementById('rock');
+const scissordiv=document.getElementById('scissor');
+const paperdiv=document.getElementById('paper');
+const step2=document.getElementsByClassName('step2')[0];
+const pick1=document.getElementsByClassName('pick1')[0];
+const pick2=document.getElementsByClassName('pick2')[0];
+const result=document.getElementsByClassName('result')[0];
+const divarr=[rockdiv,scissordiv,paperdiv];
+const imgarr=[' icon-rock.svg',' icon-scissors.svg',' icon-paper.svg'];
+const h1=document.getElementById('h1');
+const score=document.getElementById('score');
+var score1=parseInt(score.innerHTML,10);
+const windowWidth = window.innerWidth;
+const play=document.getElementById('play');
+let varstyle2,varstyle1;
 
-const display=document.getElementsByClassName('display')[0];
-
-const buttons=document.getElementsByTagName('button');
-for(var i=0;i<buttons.length;i++){
-    buttons[i].onclick=function(){
-        //display.innerHTML='0';
-        const expr=display.innerHTML;
-        console.log(this.className)
- 
-        if(this.classList.contains('oper')|| this.classList.contains('num')){
-            display.innerHTML+=this.value;
-        
-        }
-        else{
-           if(this.id==='equal'){
-            try{
-                display.innerHTML=eval(expr);
-            }
-            catch(error){
-               display.innerHTML='Syntax ERROR';
-            }
-            }
-            else if(this.id==='backspace'){
-                const expr2= expr.slice(0,-1);
-                display.innerHTML=expr2;
+    for (let j = 0; j < divarr.length; j++) {
+        //  const element = img[i];
+        divarr[j].addEventListener('click',()=>{
+            triangle.style.display='none';
+            step2.style.display='flex';
+            let x=Math.floor((Math.random()*10)%3);
+            pick1.style.backgroundImage = `url('${imgarr[j]}')`;
+            varstyle1=getComputedStyle(divarr[j]);
+            pick1.style.border=varstyle1.border;
+           
+           setTimeout(() => {
+            pick2.style.backgroundImage=`url('${imgarr[x]}')`;
+            pick2.style.backgroundColor='white';
+             varstyle2=getComputedStyle(divarr[x]);
+            pick2.style.border=varstyle2.border;
+           }, 3000);
+    
+           setTimeout(()=>{
+            let text;
+            if(x===j){
+                text='YOU DRAWN';
             }
             else{
-                display.innerHTML="";
-                display.innerHTML='0';
-            }    
-         } 
-    }
-} 
+                if(j===0){  //rock
+                     if(x===1){
+                        text='YOU WIN';
+                        score1+=2;
+                    }
+                    else{
+                        text='YOU LOOSE';
+                        score1-=1;
+                    }
+                }
+                else if(j===1){//scissor
+                    if(x===0){
+                        text='YOU LOOSE';
+                        score1-=1;
+                    }
+                    else{
+                        text='YOU WIN'
+                        score1+=2;               
+                    }
+                }
+                else{//j=2//paper
+                    if(x===0){
+                        text='YOU WIN'
+                        score1+=2;
+                    }
+                    else{
+                        text='YOU LOOSE';
+                        score1-=1;
+                    }
+                }
+            }
+            
+           console.log('from second timeout')
+           console.log('x='+x+'  j='+j);
+           console.log(typeof x +' ' +typeof j)
+             
+           if (text === 'YOU LOOSE') {
+            // pick2.style.boxShadow = '0 0 0 10px rgba(0, 0, 191, 0.9),0 0 0 20px rgba(51, 51, 192, 0.7),0 0 0 30px rgba(0, 0, 191, 0.5);';
+             pick2.style='box-shadow:rgba(31, 55, 86, 0.5) 0px 0px 10px 33px, rgb(59 72 89 / 59%) 0px 0px 0px 70px, rgba(31, 55, 86, 0.5) 0px 0px 0px 120px;';  
+             if(windowWidth<=400){
+                pick2.style='box-shadow:rgba(31, 55, 86, 0.5) 0px 0px 10px 18px, rgb(59 72 89 / 59%) 0px 0px 0px 30px, rgba(31, 55, 86, 0.5) 0px 0px 0px 80px';
+               }
+             pick2.style.backgroundImage=`url('${imgarr[x]}')`;
+               pick2.style.backgroundColor='white';
+               pick2.style.border=varstyle2.border;
+               console.log(pick2.style.border)
+            }
+          else {
+             pick1.style='box-shadow:rgba(31, 55, 86, 0.5) 0px 0px 10px 33px, rgb(59 72 89 / 59%) 0px 0px 0px 70px, rgba(31, 55, 86, 0.5) 0px 0px 0px 120px';
+             if(windowWidth<=400){
+                pick1.style='box-shadow:rgba(31, 55, 86, 0.5) 0px 0px 10px 18px, rgb(59 72 89 / 59%) 0px 0px 0px 30px, rgba(31, 55, 86, 0.5) 0px 0px 0px 80px';
+             }
+             pick1.style.backgroundImage = `url('${imgarr[j]}')`;
+             pick1.style.backgroundColor='white';
+             pick1.style.border=varstyle1.border;
+             console.log(pick1.style.border)
 
-const body1=document.getElementsByTagName('body')[0];
+            }
+            score.innerHTML= score1;
+            result.style='display:flex';
+            h1.innerText=text;
+        },5000);
+        })
+      }
+    
 
-function setAccentColor(bgcolor,color) {
-    document.documentElement.style.setProperty('--sliderbox', bgcolor);
-    document.documentElement.style.setProperty('--sldier', color);
-  }
+function playagain(){
+    triangle.style.display='block';
+    step2.style.display='none';
+    pick2.style.backgroundImage='none';
+    h1.innerHTML='';
+    result.style='display:none';
+    pick1.style='box-shadow: none;'
+    pick2.style='box-shadow: none;'
+    
+}
 
-const keyboard=document.getElementsByClassName('keyboard')[0];
-const num=document.querySelectorAll('.num');
-const oper=document.querySelectorAll('.oper');
-const range=document.getElementById('myrange');
-range.addEventListener('change',()=>{
-    //alert(range.value);
-    var range1=parseInt(range.value,10);
-if(range1===0){
-    body1.style.cssText='background-color:hsl(222,26%,31%); color:hsl(0,0%,100%);';
-    display.style.cssText='background-color:hsl(224,36%,15%) ;color:hsl(0,0%,100%) ;';
-    setAccentColor('hsl(224,36%,15%)','hsl(6,63%,50%)');
-//    slider.style.cssText='background-color:hsl(224,36%,15%) ;accent-color:hsl(6,63%,50%) ;';
-    keyboard.style.cssText='background-color:hsl(224,36%,15%) ;';
-    num.forEach(n=>{
-        n.style.cssText='background-color: hsl(30,25%,89%);box-shadow:0 3px hsl(28,16%,65%);color: hsl(221,14%,31%);';
-    })
-    oper.forEach(o=>{
-        o.style.cssText='background-color: hsl(30,25%,89%);box-shadow:0 3px hsl(28,16%,65%);color: hsl(221,14%,31%);';
-    })
-    clear.style.cssText='background-color: hsl(225,21%,49%); color:hsl(0,0%,100%) ; box-shadow:0 3px  hsl(224,28%,35%)';
-    backspace.style.cssText='background-color: hsl(225,21%,49%); color:hsl(0,0%,100%) ; box-shadow: 0 3px hsl(224,28%,35%);';
-    equal.style.cssText='background-color: ; color: ; box-shadow: 0 3px ';;
-    }
-    else if(range1===1){
-        body1.style.cssText='background-color:hsl(0,0%,90%) ;color:hsl(60, 10%, 19%) ;';
-        display.style.cssText='background-color:hsl(0,0%,93%) ;color:hsl(60, 10%, 19%) ;';
-        setAccentColor('hsl(0,5%,81%)',':hsl(25, 99%, 27%)');
-//        slider.style.cssText='background-color: hsl(0,5%,81%) ;accent-color:hsl(25, 99%, 27%);';
-        keyboard.style.cssText='background-color: hsl(0,5%,81%);';
-        num.forEach(n=>{
-            n.style.cssText ='background-color: hsl(45, 7%, 89%) ; color:hsl(60, 10%, 19%) ; box-shadow: 0 3px  hsl(35, 11%, 61%);';
-        })
-        oper.forEach(o=>{
-            o.style.cssText='background-color: hsl(45, 7%, 89%) ; color:hsl(60, 10%, 19%) ; box-shadow: 0 3px  hsl(35, 11%, 61%);';
-        }) 
-         clear.style.cssText='background-color:hsl(185, 42%, 37%) ; color: hsl(0, 0%, 100%); box-shadow:0 3px hsl(185, 58%, 25%);';
-        backspace.style.cssText='background-color: hsl(185, 42%, 37%); color: hsl(0, 0%, 100%); box-shadow: 0 3px hsl(185, 58%, 25%);';
-        equal.style.cssText='background-color:hsl(25,98%,40%) ; color: hsl(0, 0%, 100%); box-shadow: 0 3px hsl(25,99%,27%);';
-    }
-    else{
-        body1.style.cssText='color: hsl(52, 100%, 62%); background-color:  hsl(268, 75%, 9%);';
-        display.style.cssText='background-color:hsl(268, 71%, 12%) ;color:hsl(52, 100%, 62%) ;';
-        setAccentColor('hsl(268, 71%, 12%)','hsl(176, 100%, 44%)');
-//        slider.style.cssText='background-color: hsl(268, 71%, 12%);accent-color: hsl(176, 100%, 44%) ;';
-        keyboard.style.cssText='background-color: hsl(268, 71%, 12%) ;';
-        num.forEach(n=>{
-            n.style.cssText='background-color:hsl(281, 89%, 26%) ;color:hsl(52, 100%, 62%) ; box-shadow: 0 3px  hsl(285, 91%, 52%);';
-        })
-        oper.forEach(o=>{
-            o.style.cssText='background-color: hsl(281, 89%, 26%); color:hsl(52, 100%, 62%) ; box-shadow: 0 3px  hsl(285, 91%, 52%);';
-        })
-        clear.style.cssText='background-color:hsl(268, 47%, 21%) ; color:hsl(0, 0%, 100%) ; box-shadow:0 3px hsl(290, 70%, 36%);';
-        backspace.style.cssText='background-color: hsl(268, 47%, 21%); color:hsl(0, 0%, 100%) ; box-shadow: 0 3px  hsl(290, 70%, 36%);';
-        equal.style.cssText='background-color:hsl(176, 100%, 44%) ; color:  hsl(198, 20%, 13%); box-shadow: 0 3px hsl(177, 92%, 70%);';
-    }
-   
+function show(){
+    modal.style.display='flex';
+}
+close.addEventListener('click',()=>{
+    modal.style='display:none;';
 })
