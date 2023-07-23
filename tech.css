@@ -1,0 +1,109 @@
+body{
+    background: url(  background-technology-desktop.jpg);
+}
+.spacecontain{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}.spacecontent,.spacedots{
+    display: flex;
+    flex-direction: column;
+}
+.spacecontent{
+    width: 40vw;
+}
+.techtitle{
+    top: -5rem;
+    position: relative;
+}
+
+main{
+    display: block;
+    padding-right:0 ;
+}
+
+.spaceimg{
+    width: 35vw;
+    height: 20rem;
+}
+.spaceimg>img{
+    width: 100%;
+    height: 100%;
+}
+p{
+    margin: 0;
+}
+.spacedots{
+    width: 50px;
+    height: 50vh;
+    position: relative;
+    left: -2%;
+    justify-content: space-between;
+
+}
+h1{
+    margin-bottom: 18px;
+margin-top: 10px;
+font-size: 50px;
+}
+.spacedots>span{
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid white;
+    border-radius: 50%;
+    background-color: transparent;
+color: white;
+}
+#sp1{
+
+background-color: white;
+color: black;
+
+}
+
+@media(width<900px){
+    body{
+        background: url(  background-technology-tablet.jpg);
+    }
+    .techtitle{
+        top: 0;
+    }
+    p{
+        margin: auto;
+        padding:15px;
+    }
+    .spacecontain{
+        flex-direction: column;
+    }
+    .spacedots{
+        justify-content: space-evenly;
+        flex-direction: row;
+        width: 80vw;
+        top: 10px;
+        height: 12vh;
+    }
+    .spacecontent,.spacedots{
+        order: 2;
+    }
+    .spacecontent,.spaceimg{
+        width: 80vw;
+    }
+    .spaceimg{
+        order: 1;
+    }
+}
+
+@media(width<375px){
+    body{
+        background: url(  background-technology-mobile.jpg);
+    }
+    .spacecontain{
+        flex-direction: column;
+    }
+    .spaceimg{
+        height: 15rem;
+    }
+}
