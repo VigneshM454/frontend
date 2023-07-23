@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="  favicon-32x32.png">
+  <title>Frontend Mentor | Space tourism website</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="tech.css">
+</head>
+<body>
+  <header>
+    <img src="  logo.svg" class="logo" alt="">
+    <nav>
+      <img src="  icon-hamburger.svg"class="burger" alt="" onclick="show();">
+      <div><hr id="homehr"></div>
+      <div id="list">
+        <ul id="ul"> 
+          <li><img src="  icon-close.svg" id="close" alt=""></li>
+          <li><a href="index.html" class="caps" ><span class="num">00</span>  Home  </a></li>
+          <li><a href="destination-mars.html" class="caps"> <span class="num">01</span>  Destination</a></li>
+          <li><a href="crew-commander.html" class="caps"> <span class="num">02</span>  Crew</a></li>
+          <li><a href="technology-capsule.html" class="caps active"> <span class="num">03</span>  Technology</a></li>
+        </ul>
+      </div>
+    
+    </nav>
+  </header>
+  <main>
+    <h3 class="caps techtitle">  03 Space launch 101</h3>
+    <div class="spacecontain">
+      <div class="spacedots">
+        <span class="box" id="sp1">1</span>
+        <span class="box" id="sp2">2</span>
+        <span class="box" id="sp3">3</span>
+      </div>
+      <div class="spacecontent">
+        <p class="caps">  The terminology...</p>
+        <h1 class="caps" id="techname">  Launch vehicle</h1>
+        <p id="techdesc">A launch vehicle or carrier rocket is a rocket-propelled vehicle used to carry a payload from Earth's surface to space, usually to Earth orbit or beyond. Our WEB-X carrier rocket is the most powerful in operation. Standing 150 metres tall, it's quite an awe-inspiring sight on the launch pad!</p>
+      </div>
+      <div class="spaceimg">
+        <img src="  image-launch-vehicle-portrait.jpg" id="s1" alt="">
+      <!----
+          <img src="  image-space-capsule-portrait.jpg" id="s2" alt="">
+        <img src="  image-spaceport-portrait.jpg" id="s3" alt="">
+      -->
+      </div>
+    </div>
+  </main>
+
+<!---
+  03 Space launch 101
+
+  1
+  2
+  3
+
+  The terminology...
+  Space capsule
+
+  A space capsule is an often-crewed spacecraft that uses a blunt-body reentry 
+  capsule to reenter the Earth's atmosphere without wings. Our capsule is where 
+  you'll spend your time during the flight. It includes a space gym, cinema, 
+  and plenty of other activities to keep you entertained.
+-->
+<script src="space.js"></script>
+<script src="tech.js"></script>
+</body>
+</html>

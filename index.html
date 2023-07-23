@@ -1,82 +1,59 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="icon" type="image/png" sizes="32x32" href=" favicon-32x32.png">
-  
-  <title>Frontend Mentor | Rock, Paper, Scissors</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="  favicon-32x32.png">
   <link rel="stylesheet" href="index.css">
-  <!--Score
-  Rules
-
-  You Picked
-  The House Picked
-
-  You Win
-  You Lose
-
-  Play Again
- -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <title>Frontend Mentor | Space tourism website</title>
 </head>
 <body>
-  <div class="contain">
-    <div class="titlebox">
-      <img src="logo.svg"id="logo" alt="logo">
-      <div class="scorebox">
-        <p>SCORE</p>
-        <h1 id="score" value="10">10</h1>
+  <header>
+    <img src="  logo.svg" class="logo" alt="">
+    <nav>
+      <img src="  icon-hamburger.svg"class="burger" alt="" onclick="show();">
+      <div><hr id="homehr"></div>
+      <div id="list">
+        <ul id="ul"> 
+          <li><img src="  icon-close.svg" id="close" alt=""></li>
+          <li><a href="index.html" class="caps active" ><span class="num">00</span>  Home  </a></li>
+          <li><a href="destination-mars.html" class="caps"> <span class="num">01</span>  Destination</a></li>
+          <li><a href="crew-commander.html" class="caps"> <span class="num">02</span>  Crew</a></li>
+          <li><a href="technology-capsule.html" class="caps"> <span class="num">03</span>  Technology</a></li>
+        </ul>
       </div>
+    
+    </nav>
+  </header>
+ 
+  <main>
+    <div class="content">
+      <p class="p1 caps"> So, you want to travel to</p>
+      <h1 class="caps"> Space</h1>
+      <p>  Let’s face it; if you want to go to space, you might as well genuinely go to 
+        outer space and not hover kind of on the edge of it. Well sit back, and relax 
+        because we’ll give you a truly out of this world experience!
+      </p>
     </div>
-    <div class="step2">
-      <div class="hd">
-        <h2>YOU PICKED</h2>
-        <h2>THE HOUSE PICKED</h2>
-      </div>
-      <div class="pick">
-       <div class="pick1"></div>
-       <div class="result">
-        <h1 id="h1"></h1>
-        <button id="play" onclick="playagain()">PLAY AGAIN</button>
-       </div>
-       <div class="pick2"></div> 
-      </div>
-    </div>
-  
-    <div class="bgtriangle">
-      <div class="tri paper" id="paper">
-        <img src=" icon-paper.svg"  alt="" >
-      </div>
-      <div class="tri scissor" id="scissor">
-        <img src=" icon-scissors.svg"  alt="" >
-      </div>
-      <div class="tri rock" id="rock">
-        <img src=" icon-rock.svg"  alt="" >
-      </div>
-    </div>
-    <button class="btn" onclick="show()">RULES</button>
-    <div id="mymodal" class="modal">
-      <!-- Modal content -->
-      <div class="modal-content">
-        <h1>RULES</h1>
-        <img src=" image-rules.svg" id="rules" alt="">
-        <img src=" icon-close.svg" id="close" alt="">
-      </div>
-    </div>
-  </div>
-  
-<!---
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-  --->
-  <script src="index.js"></script>
+   <div class="explore">
+      <h3 class="caps">  Explore  </h3>
+   </div>
+  </main>
+  <!----
+  00 Home
+  01 Destination
+  02 Crew
+  03 Technology
+
+  So, you want to travel to
+  Space
+  Let’s face it; if you want to go to space, you might as well genuinely go to 
+  outer space and not hover kind of on the edge of it. Well sit back, and relax 
+  because we’ll give you a truly out of this world experience!
+
+  Explore
+--->
+<script src="space.js"></script>
 </body>
 </html>
